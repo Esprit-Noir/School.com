@@ -8,16 +8,15 @@
                 <div class="row mb-2 mx-1">
                     <div class="col-sm-6">
                         @if(Request::segment(3)== 'add')
-                            <h3>Ajouter Sujet</h3>
+                            <h3>Assigner un Sujet</h3>
                         @elseif(Request::segment(3)== 'edit')
-                            <h3>Modifier {{$subject->name}}</h3>
+                            <h3>Modifier {{$classSubject->name}}</h3>
                         @endif
                     </div>
 
                 </div>
             </div><!-- /.container-fluid -->
         </section>
-
         <!-- Main content -->
         <section class="content">
             <div class="container-fluid">

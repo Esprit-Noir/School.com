@@ -1,4 +1,4 @@
-<aside class="main-sidebar sidebar-light-primary elevation-2 samaSidebar" >
+<aside class="main-sidebar sidebar-dark-primary elevation-0 samaSidebar" >
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
         <img src="{{url('dist/img/sama.png')}}" alt="samaSchool" class="brand-image img-circle elevation-2" style="opacity: .8">
@@ -31,10 +31,35 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{route('admin.list')}}" class="nav-link  @if(Request::segment(2)== 'list') actif text-light @endif">
-                            <i class="nav-icon far fa-user"></i>
+                        <a href="{{route('admin.admins.list')}}" class="nav-link  @if(Request::segment(2)== 'list') actif text-light @endif">
+                            <i class="nav-icon fa fa-users"></i>
+
                             <p>
                                 Administrateurs
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.classes.list')}}" class="nav-link  @if(Request::segment(2)== 'class') actif text-light @endif">
+                            <i class="nav-icon fa fa-graduation-cap"></i>
+                            <p>
+                                Classes
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.subject.list')}}" class="nav-link  @if(Request::segment(2)== 'subject') actif text-light @endif">
+                            <i class="nav-icon fa fa-graduation-cap"></i>
+                            <p>
+                                Sujets
+                            </p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="{{route('admin.assign_subject.list')}}" class="nav-link  @if(Request::segment(2)== 'assign_subject') actif text-light @endif">
+                            <i class="nav-icon fa fa-graduation-cap"></i>
+                            <p>
+                                Sujets assignés
                             </p>
                         </a>
                     </li>

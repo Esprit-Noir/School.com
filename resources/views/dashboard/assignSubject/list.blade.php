@@ -7,10 +7,10 @@
             <div class="container-fluid">
                 <div class="row mb-2 mx-1">
                     <div class="col-sm-6">
-                        <h3>Liste des Sujets</h3>
+                        <h3>Liste des Sujets Assignes</h3>
                     </div>
                     <div class="col-sm-6" style="text-align: end">
-                        <a href="{{route('admin.subject.add')}}" class="btn btn-sm text-light" style="background: #6c63ff">Ajouter un sujet</a>
+                        <a href="{{route('admin.assign_subject.add')}}" class="btn btn-sm text-light" style="background: #6c63ff">Assigner un sujet</a>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -43,7 +43,7 @@
                                     </div>
                                     <div class="form-group col-md-3 d-flex align-items-center ">
                                         <button type="submit" class="btn btn-md text-light" style="background: #6c63ff !important;">Recherche</button>
-                                        <a href="{{route('admin.subject.list')}}" class="btn btn-md text-light btn-success ml-2">Effacer</a>
+                                        <a href="{{route('admin.assign_subject.list')}}" class="btn btn-md text-light btn-success ml-2">Effacer</a>
                                     </div>
                                 </div>
                             </form>
@@ -56,8 +56,8 @@
                                 <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Nom</th>
-                                    <th>Type</th>
+                                    <th>Classe Id</th>
+                                    <th>Sujet Id</th>
                                     <th>Status</th>
                                     <th>Auteur</th>
                                     <th>Date de création</th>
@@ -65,29 +65,29 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                @foreach($subjects as $subject)
+                                @foreach($classSubjects as $classSubject)
                                     <tr>
-                                        <td>{{$subject->id}}</td>
-                                        <td>{{$subject->name}}</td>
-                                        <td>{{$subject->type}}</td>
+                                        <td>{{$classSubject->id}}</td>
+                                        <td>{{$classSubject->class_id}}</td>
+                                        <td>{{$classSubject->subject_id}}</td>
                                         <td>
-                                            @if($subject->status == 1)
+                                            @if($classSubject->status == 1)
                                                 Active
                                             @else
                                                 Inactive
                                             @endif
                                         </td>
-                                        <td>{{$subject->created_by_name}}</td>
-                                        <td>{{date('d-m-Y H:i A', strtotime($subject->created_at))}}</td>
+                                        <td>{{$classSubject->created_by_name}}</td>
+                                        <td>{{date('d-m-Y H:i A', strtotime($classSubject->created_at))}}</td>
                                         <td>
-                                            <a href="{{ route('admin.subject.get-subject-edit', ['subject' => $subject])}}" class="btn btn-sm btn-success {{$user->id !== $subject->created_by ? 'disabled': ''}}"><i class="fa fa-edit"></i></a>
-                                            <a href="{{ route('admin.subject.delete-subject', ['subject' => $subject])}}" class="btn btn-sm btn-danger {{$user->id !== $subject->created_by ? 'disabled': ''}}"><i class="fa fa-trash-alt"></i></a>
+                                            <a href="{{ route('admin.assign_subject.get-assign_subject-edit', ['classSubject' => $classSubject])}}" class="btn btn-sm btn-success {{$user->id !== $classSubject->created_by ? 'disabled': ''}}"><i class="fa fa-edit"></i></a>
+                                            <a href="{{ route('admin.assign_subject.delete-assign_subject', ['classSubject' => $classSubject])}}" class="btn btn-sm btn-danger {{$user->id !== $classSubject->created_by ? 'disabled': ''}}"><i class="fa fa-trash-alt"></i></a>
                                         </td>
                                     </tr>
                                 @endforeach
                                 </tbody>
                             </table>
-                            <div class="card-footer" >{{$subjects->links()}}</div>
+                            <div class="card-footer" >{{$classSubjects->links()}}</div>
                         </div>
                     </div>
                     <!-- /.card -->

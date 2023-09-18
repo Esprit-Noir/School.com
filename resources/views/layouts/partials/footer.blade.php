@@ -1,5 +1,5 @@
-<footer class="main-footer">
-    <strong>Copyright &copy; 2023 <a href="#">Esprit-Noir</a>.</strong>
+<footer class="main-footer text-sm bg-dark">
+    <strong>Copyright &copy; 2023 <a href="#" style="color: #6c63ff">SAMA SCHOOL</a>.</strong>
     All rights reserved.
     <div class="float-right d-none d-sm-inline-block">
         <b>Version</b> 1.0.0

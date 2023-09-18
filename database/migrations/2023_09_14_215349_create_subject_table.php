@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('subject', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('type');
+            $table->integer('created_by')->default(null);
+            $table->integer('status')->default(1);
+            $table->integer('is_deleted')->default(0);
             $table->timestamps();
         });
     }
